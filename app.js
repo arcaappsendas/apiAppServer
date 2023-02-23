@@ -3,11 +3,15 @@ const app = express();
 const port = 3000;
 
 app.use(express.json());
+var array = [];
 
 app.post('/log', (req, res) => {
   const logMessage = req.body.message;
-  console.log(JSON.stringify(req.body));
-  res.status(204).end();
+  array.push(req.body);
+  console.log(JSON.stringify(array));
+  res.send(JSON.stringify(req.body));
+  //res.status(204).end();
+ 
 });
 
 app.listen(port, () => {
