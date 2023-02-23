@@ -6,7 +6,7 @@ app.use(express.json());
 
 app.post('/log', (req, res) => {
   const logMessage = req.body.message;
-  console.log(logMessage);
+  console.log(JSON.stringify(req.body));
   res.status(204).end();
 });
 
