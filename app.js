@@ -9,7 +9,7 @@ app.post('/log', (req, res) => {
   const logMessage = req.body.message;
   array.push(req.body);
   console.log(JSON.stringify(array));
-  res.send(JSON.stringify(req.body));
+  res.send(JSON.stringify(array));
   //res.status(204).end();
  
 });
